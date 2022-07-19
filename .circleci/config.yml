@@ -1,12 +1,30 @@
 version: 2.1
 
 orbs:
-  sonar: hubci/sonar@1.0.0
-  cimg-orb: circleci/cimg-orb@0.1.4
+  cimg-orb: circleci/cimg-orb@0.2.0
 
 workflows:
   main:
     jobs:
+      - cimg-orb/gen-dockerfiles:
+          working-dir: ./
       - cimg-orb/build-and-deploy:
-          image: cimg/go
+          name: "Push to Staging"
+          working-dir: ./
+          publish-branch: main
+          docker-namespace: ccitest
+          docker-repository: golang
           context: cimg-publishing
+          requires:
+            - cimg-orb/gen-dockerfiles
+      - cimg-orb/build-and-deploy:
+          name: "Push to Production"
+          working-dir: ./
+          image: cimg/go
+          publish-branch: main
+          docker-namespace: cimg
+          docker-repository: go
+          context: cimg-publishing
+          requires:
+            - cimg-orb/gen-dockerfiles
+            - Push to Staging
