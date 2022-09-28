@@ -6,4 +6,4 @@ docker build --file 1.18/node/Dockerfile -t cimg/go:1.18.6-node -t cimg/go:1.18-
 docker build --file 1.18/browsers/Dockerfile -t cimg/go:1.18.6-browsers -t cimg/go:1.18-browsers .
 docker build --file 1.19/Dockerfile -t cimg/go:1.19.1 -t cimg/go:1.19 .
 docker build --file 1.19/node/Dockerfile -t cimg/go:1.19.1-node -t cimg/go:1.19-node .
-docker build --file 1.19/browsers/Dockerfile -t cimg/go:1.19.1-browsers -t cimg/go:1.19-browsers .
+
