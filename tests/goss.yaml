@@ -18,7 +18,7 @@ command:
     skip: true
   go:
     exit-status: 0
-    exec: go --version
+    exec: go version
     stdout:
     skip: true
   clojure:
