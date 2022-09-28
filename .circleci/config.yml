@@ -2,17 +2,17 @@ version: 2.1
 
 orbs:
   sonar: hubci/sonar@1.0.0
-  cimg-orb: circleci/cimg-orb@0.2.1
+  cimg: circleci/cimg@dev:f5328e5804113593b45c0b90282ebe6bc1a87335
 
 workflows:
   main:
     jobs:
-      - cimg-orb/gen-dockerfiles
-      - cimg-orb/build-and-deploy:
+      - cimg/gen-dockerfiles
+      - cimg/build-and-deploy:
           name: "Push to Staging"
           publish-branch: test
           docker-namespace: ccitest
           docker-repository: testing
           context: cimg-publishing
           requires:
-            - cimg-orb/gen-dockerfiles
+            - cimg/gen-dockerfiles
