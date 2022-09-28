@@ -1,0 +1,23 @@
+user:
+  circleci:
+    exists: true
+file:
+  /bin/bash:
+    exists: true
+package:
+  build-essential:
+    installed: true
+  curl:
+    installed: true
+command:
+  node:
+    exit-status: 0
+    exec: command node -v
+    stdout:
+      - v16.16.1
+    skip: false
+  go:
+    exit-status: 1
+    exec: go --version
+    stdout:
+    skip: true
