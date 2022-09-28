@@ -12,7 +12,7 @@ workflows:
           name: "Push to Staging"
           publish-branch: test
           docker-namespace: ccitest
-          docker-repository: testing
+          docker-repository: go
           context: cimg-publishing
           requires:
             - cimg/gen-dockerfiles

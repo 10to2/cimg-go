@@ -15,9 +15,49 @@ command:
     exec: command node -v
     stdout:
       - v16.16.1
-    skip: false
+    skip: true
   go:
-    exit-status: 1
+    exit-status: 0
     exec: go --version
     stdout:
+    skip: true
+  clojure:
+    exit-status: 0
+    exec: clojure -version
+    stdout:
+    skip: true
+  php:
+    exit-status: 0
+    exec: php -v
+    stdout: 
+    skip: true
+  elixir:
+    exit-status: 0
+    exec: mix -version
+    stdout: 
+    skip: true
+  python:
+    exit-status: 0
+    exec: python -version
+    stdout: 
+    skip: true
+  ruby:
+    exit-status: 0
+    exec: ruby -v
+    stdout: 
+    skip: true
+  rust:
+    exit-status: 0
+    exec: rustc --version
+    stdout: 
+    skip: true
+  android:
+    exit-status: 0
+    exec: java -version
+    stdout: 
+    skip: true
+  openjdk:
+    exit-status: 0
+    exec: java -version
+    stdout: 
     skip: true
