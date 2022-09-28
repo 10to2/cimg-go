@@ -10,7 +10,6 @@ workflows:
       - cimg-orb/gen-dockerfiles
       - cimg-orb/build-and-deploy:
           name: "Push to Staging"
-          working-dir: cimg-node
           publish-branch: test
           docker-namespace: ccitest
           docker-repository: testing
