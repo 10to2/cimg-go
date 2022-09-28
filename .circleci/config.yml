@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   sonar: hubci/sonar@1.0.0
-  cimg: circleci/cimg@dev:2793703a17dc27c436f53d6310a7e4b44f359f74
+  cimg: circleci/cimg@dev:32d2ce0b1cd2b362723d32b35eed5a13353d5800
 
 workflows:
   main:
